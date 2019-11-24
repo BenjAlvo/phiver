@@ -19,14 +19,6 @@ class ServicesController < ApplicationController
     @service = Service.new
   end
 
-  def update
-    if @service.update(service_params)
-      redirect_to @service
-    else
-      render :edit
-    end
-  end
-
   def destroy
     @service.destroy
     redirect_to services_path
