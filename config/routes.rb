@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  get 'bookings/new'
-  get 'bookings/create'
-  get 'bookings/destroy'
   devise_for :users
-  root to: 'pages#home'
+  root to: 'services#index'
   resources :services do
     resources :bookings, only: [:new, :create]
   end
