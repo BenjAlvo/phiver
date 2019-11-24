@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-  before_action :set_service, only: [:show, :edit, :update, :destroy]
+  before_action :set_service, only: [:show, :destroy]
 
   def index
     @services = Service.all
@@ -8,6 +8,9 @@ class ServicesController < ApplicationController
   def show
   end
 
+  def new
+    @service = Service.new
+  end
   def create
     @service = Service.new(service_params)
     if @service.save
@@ -15,10 +18,6 @@ class ServicesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def new
-    @service = Service.new
   end
 
   def destroy
