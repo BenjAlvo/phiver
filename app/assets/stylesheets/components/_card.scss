@@ -39,9 +39,58 @@
   width: 40px;
 }
 
-.show-card {
-  position: absolute;
+.show-card  {
+  display:flex;
   background-color: white;
-  width: 1500px;
-  height: 620px ;
+  width: 90%;
+  height: 70%;
+  margin: 0 auto;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+.show-card  h1 {
+}
+
+.show-card h2 {
+}
+
+.show-card p {
+}
+
+.show-card img {
+  width: 350px;
+  height: 350px;
+}
+
+.show-card .show-image {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.show-card .show-display {
+  display: flex;
+  flex-direction: column;
+  width: 185px;
+}
+
+.show-display #show-service-name {
+
+}
+.show-display #show-user {
+
+}
+.show-display #show-price {
+
+}
+.show-display #show-button {
+}
+
+.show-display #show-description {
+
+
 }

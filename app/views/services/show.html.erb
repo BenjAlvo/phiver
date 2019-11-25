@@ -1,10 +1,18 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="show-card">
-      <div class="col-5 px-100">
-      <%= @service.name.capitalize %> - <%= @service.user_id %> - <%= @service.description %></li>
-      <%= link_to 'Book Now', "#"%>
+  <div class="show-card">
+    <div class="class show-image">
+      <%= image_tag "phiver.png" %>
+    </div>
+    <div class="show-display">
+      <div id="show-service-name"><%= @service.name.capitalize %></div>
+      <br>
+      <div id="show-user"><%= @service.user_id %></div>
+      <br>
+      <div id="show-price"><%= @service.price %></div>
+      <br>
+      <div id="show-button"><%= link_to 'Book Now' %> </div>
+      <br>
+      <div id="show-description"><%= @service.description %></div>
     </div>
   </div>
-</div>
 </div>
