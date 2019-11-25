@@ -1,2 +1,9 @@
-<h1>Services#new</h1>
-<p>Find me in app/views/services/new.html.erb</p>
+<div class="edit">
+  <div class="form">
+<h3>Information about your service</h3>
+    <%= render 'form', service: @service %>
+  </div>
+  <div class="image">
+    <%= image_tag "phiver.png" %>
+  </div>
+</div>

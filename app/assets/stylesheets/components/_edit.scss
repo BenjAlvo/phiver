@@ -1,0 +1,20 @@
+
+.edit {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.image {
+  width: 40%;
+  margin-top: 60px;
+  img {
+    width: 100%
+  }
+}
+.form {
+  padding: 30px;
+  width: 60%;
+  background-color: white;
+  box-shadow: 2px 2px 6px lightgray;
+  margin: 30px
+}

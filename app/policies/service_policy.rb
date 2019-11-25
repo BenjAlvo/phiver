@@ -21,6 +21,10 @@ class ServicePolicy < ApplicationPolicy
     owner_or_admin?
   end
 
+  def edit?
+    owner_or_admin?
+  end
+
   private
 
   def owner_or_admin?

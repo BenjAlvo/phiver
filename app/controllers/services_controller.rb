@@ -11,6 +11,7 @@ class ServicesController < ApplicationController
 
   def new
     @service = Service.new
+    authorize @service
   end
 
   def create
@@ -28,6 +29,7 @@ class ServicesController < ApplicationController
   end
 
   def edit
+    authorize @service
   end
 
   def update
