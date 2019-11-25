@@ -26,6 +26,15 @@ class ServicesController < ApplicationController
     redirect_to services_path
   end
 
+  def update
+    if @service.update(service_params)
+      redirect_to @service
+    else
+      render :edit
+    end
+  end
+
+
   private
 
   def set_service
