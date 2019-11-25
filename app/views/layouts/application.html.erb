@@ -12,8 +12,10 @@
      <p class="alert"><%= alert %></p>
   </head>
   <body>
-    <%= yield %>
+    <%= render "shared/navbar" %>
+    <div class="content"><%= yield %></div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <%= render "shared/footer" %>
   </body>
 </html>
