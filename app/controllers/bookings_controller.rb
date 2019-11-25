@@ -12,8 +12,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @booking.user = current_user
     @booking.service = Service.find(params[:service_id])
-    @booking.save
     authorize @booking
+    @booking.save
     redirect_to service_booking_path(@booking.service, @booking)
   end
 
