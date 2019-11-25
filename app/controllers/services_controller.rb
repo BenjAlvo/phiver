@@ -1,11 +1,9 @@
 class ServicesController < ApplicationController
-  before_action :authenticate_user!
-  include Pundit
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_service, only: [:show, :destroy]
 
   def index
-    @services = Service.all
-    authorize @service
+    @services = policy_scope(Service)
   end
 
   def show
@@ -33,6 +31,7 @@ class ServicesController < ApplicationController
 
   def set_service
     @service = Service.find(params[:id])
+    authorize @service
   end
 
   def service_params
