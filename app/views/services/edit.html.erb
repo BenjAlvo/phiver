@@ -5,6 +5,7 @@
     <%= render 'form', service: @service %>
   </div>
   <div class="image">
-    <%= image_tag "phiver.png" %>
+    <% image = @service.photo.nil? ? "phiver.png" : @service.photo %>
+    <%= cl_image_tag image %>
   </div>
 </div>
