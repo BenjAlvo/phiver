@@ -4,6 +4,10 @@
     <%= render 'form', service: @service %>
   </div>
   <div class="image">
-    <%= image_tag "phiver.png" %>
+      <% if service.photo_url.nil? %>
+        <%= image_tag "phiver.png"%>
+      <%else%>
+        <%= cl_image_tag service.photo %>
+      <%end%>
   </div>
 </div>
