@@ -76,23 +76,15 @@
 }
 
 .show-card .show-display {
-  width: 185px;
-  margin: 25px;
+  height: 80%;
+  width: 40%;
+  // margin: 25px 25px 25px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.show-display #show-service-name {
-
-}
-.show-display #show-user {
-
-}
-.show-display #show-price {
-
-}
-.show-display #show-button {
-}
-
-.show-display #show-description {
-
+.show-display .top-div {
+  // margin-bottom:100px
 
 }
