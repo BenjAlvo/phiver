@@ -1,29 +1,3 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-
-    <%= link_to services_path , class: "navbar-brand" do  %>
-    <%= image_tag "phiver.png" %>
-    <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <ul class= "logo_cart">
-        <i class="fas fa-cart-plus"></i>
-      </ul>
-      <ul class="logo_heart">
-        <i class="fas fa-heart"></i>
-      </ul>
-      <ul class="logo_user">
-        <i class="fas fa-user"></i>
-      </ul>
-    </ul>
-  </div>
-</div>
-
 <div class="container">
   <div class="row">
     <% @services.each do |service| %>
@@ -40,12 +14,5 @@
       </div>
       <% end %>
     </div>
-  </div>
-
-  <div class="footer mt-3 d-flex justify-content-end">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-cc-mastercard"></i></a>
-    <a href="#"><i class="fab fa-cc-visa"></i></a>
-    <a href="#"><i class="fab fa-cc-paypal"></i></i></a>
   </div>
 </div>
