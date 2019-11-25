@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-around align-items-center">
+  <div class="container justify-content-center">
+
+    <div class="border-bottom">
+    <h1 class="m-5">All of the bookings for <%= current_user.first%><h1>
+
+      <%@bookings.each do |booking| %>
+      <div class="card-trip">
+        <% if booking.photo_url.nil? %>
+        <%= image_tag "phiver.png"%>
+        <%else%>
+        <%= cl_image_tag booking.photo, height:200, crop: :fill %>
+        <% end %>
+        <div class="card-trip-infos">
+          <h2>$<%= service.price %></h2>
+          <% end %>
+        </div>
+      </div>
+    </div>

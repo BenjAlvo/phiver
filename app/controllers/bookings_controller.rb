@@ -1,4 +1,8 @@
 class BookingsController < ApplicationController
+  def index
+    @bookings = bookings.all
+  end
+
   def show
     @booking = Booking.find(params[:id])
     authorize @booking
@@ -25,6 +29,4 @@ class BookingsController < ApplicationController
   def user_params
     params.require(:user).permit(:user_id)
   end
-
-
 end
