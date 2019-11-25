@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_service, only: [:show, :destroy]
+  before_action :set_service, only: [:show, :destroy, :edit, :update]
 
   def index
     @services = policy_scope(Service)
@@ -25,6 +25,9 @@ class ServicesController < ApplicationController
   def destroy
     @service.destroy
     redirect_to services_path
+  end
+
+  def edit
   end
 
   def update
