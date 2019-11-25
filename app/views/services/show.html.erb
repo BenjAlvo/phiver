@@ -1,18 +1,24 @@
-<div class="container">
-  <div class="show-card">
-    <div class="class show-image">
-      <%= image_tag "phiver.png" %>
-    </div>
-    <div class="show-display">
-      <div id="show-service-name"><%= @service.name.capitalize %></div>
-      <br>
-      <div id="show-user"><%= @service.user_id %></div>
-      <br>
-      <div id="show-price"><%= @service.price %></div>
-      <br>
+<!-- <div class="container"> -->
+<div class="show-card">
+  <div class="class show-image">
+    <% if @service.photo.url %>
+    <%= cl_image_tag @service.photo %>
+    <% else %>
+    <%= image_tag "phiver.png" %>
+    <% end %>
+  </div>
+  <div class="show-display">
+    <div class="top-div">
+      <h1 id="show-service-name"><%= @service.name.capitalize %></h1>
+      <p  id="show-user"> Posted by: <%= @service.user.name %></p>
+      <h2 id="show-price"><%=@service.price%> <i>/per hour <i> </h2>
       <div id="show-button"><%= link_to 'Book Now' %> </div>
-      <br>
-      <div id="show-description"><%= @service.description %></div>
+      <p id="show-description"><%= @service.description %></p>
+    </div>
+    <div>
+      <p id="created-at"> Posted on: <%= @service.created_at %> </p>
     </div>
   </div>
 </div>
+<!-- </div>
+-->
