@@ -1,8 +1,9 @@
 class ServicesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_service, only: [:show, :destroy]
 
   def index
-    @services = Service.all
+    @services = policy_scope(Service)
   end
 
   def show
@@ -39,9 +40,14 @@ class ServicesController < ApplicationController
 
   def set_service
     @service = Service.find(params[:id])
+    authorize @service
   end
 
   def service_params
     params.require(:service).permit(:name, :photo, :description, :price)
+  end
+
+  def skip_pundit?
+    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
 end
