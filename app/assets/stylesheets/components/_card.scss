@@ -44,13 +44,14 @@
 .show-card  {
   display:flex;
   background-color: white;
-  width: 90%;
-  height: 70%;
+  width: 95%;
+  height: 80vh;
   margin: 0 auto;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
+  align-items: center;
 }
 .show-card  h1 {
 }
@@ -75,24 +76,15 @@
 }
 
 .show-card .show-display {
+  height: 80%;
+  width: 40%;
+  // margin: 25px 25px 25px 0px;
   display: flex;
   flex-direction: column;
-  width: 185px;
+  justify-content: space-between;
 }
 
-.show-display #show-service-name {
-
-}
-.show-display #show-user {
-
-}
-.show-display #show-price {
-
-}
-.show-display #show-button {
-}
-
-.show-display #show-description {
-
+.show-display .top-div {
+  // margin-bottom:100px
 
 }
