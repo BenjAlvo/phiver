@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <% @bookings.each do |booking| %>
+    <div class="col-12 col-md-12 col-lg-12">
+      <div class="card-trip">
+        <% if booking.service.photo_url.nil? %>
+        <%= image_tag "phiver.png"%>
+        <%else%>
+        <%= cl_image_tag booking.service.photo %>
+        <%end%>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%=link_to booking.service.name, booking.service %></h2>
+            <p>evaluation stars!</p>
+          </div>
+          <h2>$<%= booking.service.price %>/hour </h2>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

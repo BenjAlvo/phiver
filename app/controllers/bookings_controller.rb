@@ -1,16 +1,9 @@
 class BookingsController < ApplicationController
-  def index
-    @bookings = bookings.all
-  end
 
   def show
     @booking = Booking.find(params[:id])
     authorize @booking
   end
-
-  # def new
-  #   @bookings = Booking.all
-  # end
 
   def create
     @booking = Booking.new
