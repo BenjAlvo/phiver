@@ -5,13 +5,20 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
+  def new
+    @booking = Booking.new
+    @service = Service.find(params[:service_id])
+    authorize @booking
+  end
+
+
   def create
     @booking = Booking.new
     @booking.user = current_user
     @booking.service = Service.find(params[:service_id])
     authorize @booking
     @booking.save
-    redirect_to service_booking_path(@booking.service, @booking)
+    redirect_to dashboards_path
   end
 
   def destroy
