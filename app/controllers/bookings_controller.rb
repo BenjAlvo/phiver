@@ -1,7 +1,4 @@
 class BookingsController < ApplicationController
-  def index
-    @bookings = bookings.all
-  end
 
   def show
     @booking = Booking.find(params[:id])
@@ -14,12 +11,13 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
+
   def create
     @booking = Booking.new
     @booking.user = current_user
     @booking.service = Service.find(params[:service_id])
-    @booking.save
     authorize @booking
+    @booking.save
     redirect_to dashboards_path
   end
 

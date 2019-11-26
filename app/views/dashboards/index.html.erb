@@ -1,19 +1,19 @@
 <div class="container">
   <div class="row">
-    <% @services.each do |service| %>
-    <div class="col-12 col-md-6 col-lg-4">
+    <% @bookings.each do |booking| %>
+    <div class="col-12 col-md-12 col-lg-12">
       <div class="card-trip">
-        <% if service.photo_url.nil? %>
+        <% if booking.service.photo_url.nil? %>
         <%= image_tag "phiver.png"%>
         <%else%>
-        <%= cl_image_tag service.photo %>
+        <%= cl_image_tag booking.service.photo %>
         <%end%>
         <div class="card-trip-infos">
           <div>
-            <h2><%=link_to service.name, service %></h2>
+            <h2><%=link_to booking.service.name, booking.service %></h2>
             <p>evaluation stars!</p>
           </div>
-          <h2>$<%= service.price %>/hour </h2>
+          <h2>$<%= booking.service.price %>/hour </h2>
         </div>
       </div>
     </div>
