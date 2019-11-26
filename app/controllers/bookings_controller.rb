@@ -8,9 +8,11 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
-  # def new
-  #   @bookings = Booking.all
-  # end
+  def new
+    @booking = Booking.new
+    @service = Service.find(params[:service_id])
+    authorize @booking
+  end
 
   def create
     @booking = Booking.new
@@ -18,7 +20,7 @@ class BookingsController < ApplicationController
     @booking.service = Service.find(params[:service_id])
     @booking.save
     authorize @booking
-    redirect_to service_booking_path(@booking.service, @booking)
+    redirect_to dashboards_path
   end
 
   def destroy
