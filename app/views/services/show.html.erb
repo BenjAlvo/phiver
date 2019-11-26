@@ -12,7 +12,7 @@
       <h1 id="show-service-name"><%= @service.name.capitalize %></h1>
       <p  id="show-user"> Posted by: <%= @service.user.name %></p>
       <h2 id="show-price">$<%=@service.price%> <i>/hour <i> </h2>
-      <div id="show-button"><%= link_to 'Book Now', service_bookings_path(@service), method: :post %> </div>
+      <a><%= link_to 'Book Now', service_bookings_path(@service), method: :post %> </a>
       <p id="show-description"><%= @service.description %></p>
     </div>
     <div>
