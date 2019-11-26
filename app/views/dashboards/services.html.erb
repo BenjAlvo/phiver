@@ -1,0 +1,28 @@
+
+<h1> my services</h1>
+<div class="container">
+  <div class="row">
+    <% @services.each do |service| %>
+      <div class="card-trip">
+        <% if service.photo_url.nil? %>
+        <%= image_tag "phiver.png"%>
+        <%else%>
+        <%= cl_image_tag service.photo %>
+        <%end%>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%=link_to service.name, service %></h2>
+            <td>
+            <%= link_to service, method: :delete, data: { confirm: 'Are you sure you want to delete this service?' } do %>
+              <i class="fas fa-trash"></i>
+              <%end%>
+            </td>
+          </div>
+          <div>
+          <h2>$<%= service.price %>/hour </h2>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
