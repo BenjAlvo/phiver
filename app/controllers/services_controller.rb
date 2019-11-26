@@ -28,6 +28,7 @@ class ServicesController < ApplicationController
   def destroy
     @service.destroy
     redirect_to services_path
+    authorize @service
   end
 
   def edit

@@ -3,7 +3,8 @@ class DashboardsController < ApplicationController
     @bookings = policy_scope(Booking).where(user: current_user)
   end
 
-  def show
+  def services
+    @services = policy_scope(Service).where(user: current_user)
   end
 
 end
