@@ -1,10 +1,16 @@
 
-<h1> My Services</h1>
-</br>
-</br>
+<div class="dashboard-banner"  >
+  <div class="dashboard-banner-text">
+    <h1 class="page-title-entry-title">Your Services</h1>
+    <p class="page-sub-title">This are the services you are actually offering.</p>
+  </div>
+</div>
+<br>
+<br>
 <div class="container">
   <div class="row">
     <% @services.each do |service| %>
+    <div class="col-12 col-md-6 col-lg-6">
       <div class="card-trip">
         <% if service.photo_url.nil? %>
         <%= image_tag "phiver.png"%>
@@ -15,13 +21,14 @@
           <div>
             <h2><%=link_to service.name, service %></h2>
             <td>
-            <%= link_to  service, method: :delete, data: { confirm: 'Are you sure you want to delete this service?' } do %>
+              <%= link_to  service, method: :delete, data: { confirm: 'Are you sure you want to delete this service?' } do %>
               <p class="delete-phrase">delete this service</p><i class="fas fa-trash"></i>
               <%end%>
             </td>
           </div>
           <div>
-          <h2>$<%= service.price %>/hour </h2>
+            <h2>$<%= service.price %>/hour </h2>
+          </div>
         </div>
       </div>
     </div>
