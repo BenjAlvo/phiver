@@ -47,7 +47,12 @@
   width: 100%;
   background-color: #FFFFFF;
   border-radius: 10px;
+  img{
+    width: 100%;
+  }
 }
+
+
 
 #bookbtn {
   text-align: center;
@@ -56,6 +61,12 @@
   background-color:white;
   color: #4024EE;
   border-color: #4024EE;
+  display: block;
+  width: 100%;
+  border: 1px solid;
+  padding: 10px 0px;
+  border-radius: 5px;
+  margin-top: 50px;
 }
 
 

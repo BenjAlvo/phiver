@@ -7,7 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.create!(name:"Ben Alvo", email:"test@test.test", password:"123456")
+
 service = Service.create!(name:"service", description: "desc", price:"9999999", user:user)
 Booking.create!(user: user, service: service)
-review = Review.create!(title:"Great Job", content: "This was a great service", rating:"4", user: User.last, service: Service.last)
+
+review = Review.create!(title:"Great Job", content: "This was a great service", rating:"5", user: User.last, service: Service.last)
+Booking.create!(user: user, service: service)
+
+
+review2 = Review.create!(title:"I dont agree with the user above", content: "This was a ripoff!", rating:"2", user: User.last, service: Service.last)
 Booking.create!(user: user, service: service)
