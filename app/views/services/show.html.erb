@@ -12,12 +12,12 @@
   <div class="col-6">
     <div class="service-info">
        <h1 class="text-left" id="show-service-name"><%= @service.name.capitalize %></h1>
-       <p class="text-left" id="show-user"> Posted by: <%= @service.user.name %> on <%= @service.created_at%></p>
+       <p class="text-left" id="show-user"> Posted by: <%= @service.user_id %> on <%= @service.created_at%></p>
        <h2 class="pt-2" id="show-price">$<%=@service.price%> <i>/hour </i> </h2>
        <p class="text-center pt-2 id="show-description"><%= @service.description %></p>
     </div>
-    <div class="reviews mt-4">
-        <h1 class="text-center">Reviews</h1>
+    <div class="reviews d-flex justify-content-center mt-4">
+       <h3>Reviews</h3><p>(<%= link_to 'Write a Review!', new_service_review_path(@service), id: "review-btn"%>)</p>
       </div>
     </div>
   </div>
