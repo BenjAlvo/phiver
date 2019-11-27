@@ -30,6 +30,7 @@
 </div>
 
 <script>
+  const price = parseInt(document.querySelector(".edit").dataset.wage, 10)
   const hourlisten = document.getElementById('Hour');
   hourlisten.addEventListener('keyup', (event) => {
       // do something on click of an element
@@ -38,8 +39,7 @@
       if (hour == null || Number.isNaN(hour)) {
         hour = 0
       }
-      let wage = 15;
-      let text = `Your total cost is: ${hour} hours x ${wage}/per hour = $${wage * hour}`;
+      let text = `Your total cost is: ${hour} hours x ${price}/per hour = $${price * hour}`;
       let insert = document.getElementById('total')
       insert.innerHTML = text
     });

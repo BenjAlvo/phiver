@@ -1,10 +1,16 @@
-<h1>Services Booked</h1>
+<div class="dashboard-banner"  >
+  <div class="dashboard-banner-text">
+    <h1 class="page-title-entry-title">Services booked</h1>
+    <p class="page-sub-title">This are the services you have booked</p>
+  </div>
+</div>
 <br>
 <br>
 
 <div class="container">
   <div class="row">
     <% @bookings.each do |booking| %>
+    <div class="col-12 col-md-6 col-lg-6">
       <div class="card-trip">
         <% if booking.service.photo_url.nil? %>
         <%= image_tag "phiver.png"%>
@@ -16,7 +22,7 @@
             <h2><%=link_to booking.service.name, booking.service %></h2>
             <td>
             <%= link_to booking, method: :delete, data: { confirm: 'Are you sure you want to delete this booking?' } do %>
-              <i class="fas fa-trash"></i>
+              <p class="delete-phrase">Unbook this service</p><i class="fas fa-trash"></i>
               <%end%>
             </td>
           </div>
@@ -25,6 +31,7 @@
         </div>
       </div>
     </div>
+  </div>
     <% end %>
   </div>
 </div>
