@@ -12,13 +12,19 @@
   <div class="col-6">
     <div class="service-info">
        <h1 class="text-left" id="show-service-name"><%= @service.name.capitalize %></h1>
-       <p class="text-left" id="show-user"> Posted by: <%= @service.user_id %> on <%= @service.created_at%></p>
+       <p class="text-left" id="show-user"> Posted by: <b><%= @service.user_id %></b> on <%= @service.created_at%></p>
        <h2 class="pt-2" id="show-price">$<%=@service.price%> <i>/hour </i> </h2>
        <p class="text-center pt-2 id="show-description"><%= @service.description %></p>
     </div>
     <div class="reviews d-flex justify-content-center mt-4">
        <h3>Reviews</h3><p>(<%= link_to 'Write a Review!', new_service_review_path(@service), id: "review-btn"%>)</p>
+        </div>
+    <% @service.reviews.each do |review| %>
+       <div class="review-card">
+            <p class="text-center"> <%= review.rating %> </p>
+            <p class="text-center"> <%= review.content %> </p>
+            <p class="text-center"> <%= review.title %> </p>
       </div>
+          <% end %>
     </div>
-  </div>
-</div>
+
