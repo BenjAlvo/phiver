@@ -1,0 +1,27 @@
+
+.dashboard-banner{
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  background-color: white;
+  border: 2px solid;
+  border-color: green;
+}
+
+.dashboard-banner img{
+  width: auto;
+  height: auto;
+  background-image: no-repeat;
+  background-size: 300px 100px;
+
+}
+
+.dashboard-banner-text{
+text-align: center;
+color: green;
+}
+
+.page-title-entery-title{
+  text-align: center;
+}
