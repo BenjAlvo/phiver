@@ -1,6 +1,6 @@
 <div class="container" id="show-cont">
-  <div class="row">
-  <div class="col-6">
+  <div class="row mh-100">
+  <div class="col-6 mh-100">
     <% if @service.photo.url %></div>
       <%= cl_image_tag @service.photo %>
     <% else %>
@@ -11,13 +11,13 @@
 
   <div class="col-6">
     <div class="service-info">
-       <h1 id="show-service-name"><%= @service.name.capitalize %></h1>
-       <p  id="show-user"> Posted by: <%= @service.user.name %> on <%= @service.created_at%></p>
-       <h2 id="show-price">$<%=@service.price%> <i>/hour </i> </h2>
-       <p id="show-description"><%= @service.description %></p>
+       <h1 class="text-left" id="show-service-name"><%= @service.name.capitalize %></h1>
+       <p class="text-left" id="show-user"> Posted by: <%= @service.user.name %> on <%= @service.created_at%></p>
+       <h2 class="pt-2" id="show-price">$<%=@service.price%> <i>/hour </i> </h2>
+       <p class="text-center pt-2 id="show-description"><%= @service.description %></p>
     </div>
-    <div class="reviews">
-        <h1>Reviews</h1>
+    <div class="reviews mt-4">
+        <h1 class="text-center">Reviews</h1>
       </div>
     </div>
   </div>
