@@ -6,8 +6,11 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
   resources :bookings, only: [:destroy]
-  resources :dashboards, only: [:index]
-  get "dashboards/services"
+  resources :dashboards, only: [:index] do
+    collection do
+      get "services"
+    end
+  end
 
 end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

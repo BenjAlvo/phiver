@@ -24,29 +24,10 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <ul class= "logo_cart">
-        <td>
-          <%=link_to dashboards_path do %>
-          <i class="fas fa-cart-plus"></i>
-          <%end%>
-        </td>
-      </ul>
-      <ul class="logo_add">
-        <td>
-          <%= link_to new_service_path do %>
-          <i class="fas fa-plus-square"></i>
-          <% end %>
-        </td>
-      </ul>
-      <ul class="logo_user">
-        <td>
-          <%= link_to dashboards_services_path do %>
-          <i class="fas fa-user"></i>
-          <%end%>
-        </td>
-      </ul>
-    </ul>
+    <i class="far fa-caret-square-down dropdown-arrow" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+      <%= link_to "Services booked", dashboards_path, class: "dropdown-item" %>
+      <%= link_to "My Services", services_dashboards_path, class: "dropdown-item" %>
+      <%= link_to "Add a New Service", new_service_path, class: "dropdown-item" %>
   </div>
 </div>
