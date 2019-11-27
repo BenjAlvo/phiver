@@ -9,10 +9,16 @@
   </div>
   <div class="show-display">
     <div class="top-div">
-      <h1 id="show-service-name"><%= @service.name.capitalize %></h1>
-      <p  id="show-user"> Posted by: <%= @service.user.name %></p>
-      <h2 id="show-price">$<%=@service.price%> <i>/hour <i> </h2>
-      <a><%= link_to 'Book Now', new_service_booking_path(@service)%> </a>
+      <div class="name-show">
+        <h1 id="show-service-name"><%= @service.name.capitalize %></h1>
+      </div>
+      <div class="user-show">
+        <p  id="show-user"> Posted by: <%= @service.user.name %></p>
+      </div>
+      <div class="price-show">
+        <h2 id="show-price">$<%=@service.price%> <i>/hour </i> </h2>
+      </div>
+      <a><%= link_to 'Book Now', new_service_booking_path(@service), class: "btn-success"%> </a>
       <p id="show-description"><%= @service.description %></p>
     </div>
     <a><%= link_to 'Add a review!', new_service_review_path(@service)%> </a>
