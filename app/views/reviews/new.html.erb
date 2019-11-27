@@ -1,0 +1,13 @@
+<div class="edit">
+  <div class="form">
+<h3>Go ahead, write a review about <%= @service.review.title %>!</h3>
+    <%= render 'form', review: @review %>
+  </div>
+  <div class="image">
+    <% if @service.photo_url.nil? %>
+        <%= image_tag "phiver.png"%>
+        <%else%>
+        <%= cl_image_tag @service.photo %>
+      <%end%>
+  </div>
+</div>
