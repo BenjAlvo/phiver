@@ -15,6 +15,7 @@
       <a><%= link_to 'Book Now', new_service_booking_path(@service)%> </a>
       <p id="show-description"><%= @service.description %></p>
     </div>
+    <a><%= link_to 'Add a review!', new_service_review_path(@service)%> </a>
     <div>
       <p id="created-at"> Posted on: <%= @service.created_at %> </p>
     </div>

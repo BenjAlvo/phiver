@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'services#index'
   resources :services do
     resources :bookings, only: [:show, :new, :create]
+    resources :reviews, only: [:new, :create]
   end
   resources :bookings, only: [:destroy]
   resources :dashboards, only: [:index]

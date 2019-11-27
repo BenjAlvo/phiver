@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.create!(name:"test", email:"test@test.test", password:"123456")
+user = User.create!(name:"Ben Alvo", email:"test@test.test", password:"123456")
 service = Service.create!(name:"service", description: "desc", price:"9999999", user:user)
 Booking.create!(user: user, service: service)
-
+review = Review.create!(title:"Great Job", content: "This was a great service", rating:"4", user: User.last, service: Service.last)
+Booking.create!(user: user, service: service)
