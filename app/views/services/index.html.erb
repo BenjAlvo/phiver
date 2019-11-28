@@ -20,7 +20,8 @@
         <div class="card-trip-infos">
           <div>
             <h2><%=link_to service.name, service %></h2>
-            <p>evaluation stars!</p>
+
+            <%= service.rating_average %>
           </div>
           <h2>$<%= service.price %>/hour </h2>
         </div>

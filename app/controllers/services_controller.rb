@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_service, only: [:show, :destroy, :edit, :update]
+  before_action :set_service, only: [:show, :destroy, :edit, :update, :average]
 
   def index
     if params[:query].present?
@@ -47,7 +47,6 @@ class ServicesController < ApplicationController
       render :edit
     end
   end
-
 
   private
 
