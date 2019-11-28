@@ -12,10 +12,12 @@
     <% @services.each do |service| %>
     <div class="col-12 col-md-6 col-lg-4">
       <div class="card-trip">
+        <%=link_to service, class: "card-trip" do %>
         <% if service.photo_url.nil? %>
         <%= image_tag "phiver.png"%>
         <%else%>
         <%= cl_image_tag service.photo %>
+        <%end%>
         <%end%>
         <div class="card-trip-infos">
           <div>
