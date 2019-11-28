@@ -22,8 +22,9 @@
         <div class="card-trip-infos">
           <div>
             <h2><%=link_to service.name, service %></h2>
-
-            <%= service.rating_average %>
+            <% service.rating_average.to_i.times do  %>
+            <i class="fas fa-star"></i>
+            <% end %>
           </div>
           <h2>$<%= service.price %>/hour </h2>
         </div>
