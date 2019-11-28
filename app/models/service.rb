@@ -8,4 +8,14 @@ class Service < ApplicationRecord
   validates :price, presence: true
 
   mount_uploader :photo, PhotoUploader
+
+  def rating_average
+    all = self.reviews.pluck(:rating)
+    if all.blank?
+      "no ratings yet!"
+    else
+      average = all.sum.to_f / all.count
+      average
+    end
+  end
 end
