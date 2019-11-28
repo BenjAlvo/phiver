@@ -12,17 +12,19 @@
     <% @services.each do |service| %>
     <div class="col-12 col-md-6 col-lg-6">
       <div class="card-trip">
+        <%=link_to service, class: "card-trip" do %>
         <% if service.photo_url.nil? %>
         <%= image_tag "phiver.png"%>
         <%else%>
         <%= cl_image_tag service.photo %>
+        <%end%>
         <%end%>
         <div class="card-trip-infos">
           <div>
             <h2><%=link_to service.name, service %></h2>
             <td>
               <%= link_to  service, method: :delete, data: { confirm: 'Are you sure you want to delete this service?' } do %>
-              <p class="delete-phrase">delete this service</p><i class="fas fa-trash"></i>
+              <p class="btn btn-warning">Delete this service</p>
               <%end%>
             </td>
           </div>

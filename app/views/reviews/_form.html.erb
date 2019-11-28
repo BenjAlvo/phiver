@@ -20,7 +20,7 @@
     </div>
 
     <div>
-      <%= f.input :rating %>
+      <%= f.input :rating, collection: (1..5).to_a, id: "review_rating" %>
     </div>
 
   <div class="form-actions">
