@@ -1,30 +1,36 @@
 <div class="container" id="show-cont">
   <div class="row mh-100">
-  <div class="col-6 mh-100">
+    <div class="col-6 mh-100">
     <% if @service.photo.url %></div>
-      <%= cl_image_tag @service.photo %>
+    <%= cl_image_tag @service.photo %>
     <% else %>
-      <%= image_tag "phiver.png" %>
+    <%= image_tag "phiver.png" %>
     <% end %>
     <%= link_to 'Book Now', new_service_booking_path(@service), class: "btn-success", id: "bookbtn"%>
   </div>
-
   <div class="col-6">
     <div class="service-info">
-       <h1 class="text-left" id="show-service-name"><%= @service.name.capitalize %></h1>
-       <p class="text-left" id="show-user"> Posted by: <b><%= @service.user_id %></b> on <%= @service.created_at%></p>
-       <h2 class="pt-2" id="show-price">$<%=@service.price%> <i>/hour </i> </h2>
-       <p class="text-center pt-2 id="show-description"><%= @service.description %></p>
+      <h1 class="text-left" id="show-service-name"><%= @service.name.capitalize %></h1>
+      <p class="text-left" id="show-user"> Posted by: <b><%= @service.user.name %></b> on <%= @service.created_at%></p>
+      <h2 class="pt-2" id="show-price">$<%=@service.price%> <i>/hour </i> </h2>
+      <p class="text-center pt-2 id="show-description"><%= @service.description %></p>
     </div>
-    <div class="reviews d-flex justify-content-center mt-4">
-       <h3>Reviews</h3><p>(<%= link_to 'Write a Review!', new_service_review_path(@service), id: "review-btn"%>)</p>
-        </div>
-    <% @service.reviews.each do |review| %>
-       <div class="review-card">
-            <p class="text-center"> <%= review.rating %> </p>
-            <p class="text-center"> <%= review.content %> </p>
-            <p class="text-center"> <%= review.title %> </p>
+    <div class="reviews d-flex align-items-baseline justify-content-center mt-4">
+      <h3 class="mr-2">Reviews</h3><p>(<%= link_to 'Write a Review!', new_service_review_path(@service), id: "review-btn"%>)</p>
+    </div>
+    <div class="review-cont mh-100">
+      <% @service.reviews.each do |review| %>
+      <div class="rewiew-card">
+          <div class="review-card-top d-flex flex-column mb-0">
+            <p class="text-left mb-0"> <%= review.rating %> </p>
+            <p class="text-left"> <%= review.title %> by <%= review.user.name %>  </p>
+          </div>
+          <div class="review-card-bottom">
+          <p class="text-center"> <%= review.content %> </p>
+          </div>
+         </div>
       </div>
-          <% end %>
+    <% end %>
     </div>
-
+  </div>
+</div>
