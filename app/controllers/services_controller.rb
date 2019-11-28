@@ -32,7 +32,7 @@ class ServicesController < ApplicationController
 
   def destroy
     @service.destroy
-    redirect_to services_path
+    redirect_to services_dashboards_path
     authorize @service
   end
 
