@@ -1,6 +1,9 @@
 <div class="edit align-items-center" data-wage="<%= @service.price%>">
-  <div class="form flex justify-content-center align-items-center">
-  <h1> Confirm your booking!</h1>
+  <div class="form flex justify-content-center text-center">
+          <h2> Book </h2>
+          <h2 class="font-italic font-weight-bold"> <%=@service.user.name%></h2>
+          <h2>for</h2>
+         <h2 class="font-italic font-weight-bold">"<%=@service.name.capitalize %>"</h2>
     <%= render 'form', booking: @booking %>
   </div>
   <div class="image">

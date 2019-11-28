@@ -1,17 +1,17 @@
 <div class="container justify-content-left">
   <%= simple_form_for([@service, @booking]) do |f| %>
   <div class="form-inputs">
-    <label for="Time Needed">Time Needed</label>
+    <label for="Time Needed">Exact time requested</label>
     <br>
     <input type="time" name="Time Needed">
   </div>
   <div class="form-inputs">
-    <label for="Date Needed">Date Needed</label>
+    <label for="Date Needed">Exact date requested</label>
     <br>
     <input type="date" name="Date Needed">
   </div>
   <div class="form-inputs">
-    <label for="Hours Needed">Total Hours Needed</label>
+    <label for="Hours Needed">Total hours needed for the service</label>
     <br>
     <input type="integer" name="Hours Needed" id="Hour">
   </div>
