@@ -22,7 +22,11 @@
       <% @service.reviews.each do |review| %>
       <div class="review-card">
           <div class="review-card-top d-flex flex-column mb-0">
-            <p class="text-left mb-0"> <%= review.rating %> </p>
+             <div class="text-left">
+              <% review.rating.times do  %>
+              <i class="fas fa-star"></i>
+              <% end %>
+            </div>
             <p class="text-left"> <%= review.title %> by <%= review.user.name %> </p>
           </div>
           <div class="review-card-bottom">
