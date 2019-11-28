@@ -1,7 +1,7 @@
 <div class="container" id="show-cont">
   <div class="row mh-100">
     <div class="col-6 mh-100">
-    <% if @service.photo.url %></div>
+    <% if @service.photo.url %>
     <%= cl_image_tag @service.photo %>
     <% else %>
     <%= image_tag "phiver.png" %>
@@ -13,7 +13,7 @@
       <h1 class="text-left" id="show-service-name"><%= @service.name.capitalize %></h1>
       <p class="text-left" id="show-user"> Posted by: <b><%= @service.user.name %></b> on <%= @service.created_at.strftime("%m/%d/%Y")%> @ <%=@service.created_at.strftime("%I:%M %p") %> </p>
       <h2 class="pt-2" id="show-price">$<%=@service.price%> <i>/hour </i> </h2>
-      <p class="text-center pt-2 id="show-description"><%= @service.description %></p>
+      <p class="text-center pt-2" id="show-description"><%= @service.description %></p>
     </div>
     <div class="reviews d-flex align-items-baseline justify-content-center mt-4">
       <h3 class="mr-2">Reviews</h3><p>(<%= link_to 'Write a Review!', new_service_review_path(@service), id: "review-btn"%>)</p>
@@ -21,19 +21,20 @@
     <div class="review-cont">
       <% @service.reviews.each do |review| %>
       <div class="review-card">
-          <div class="review-card-top d-flex flex-column mb-0">
-             <div class="text-left">
-              <% review.rating.times do  %>
-              <i class="fas fa-star"></i>
-              <% end %>
-            </div>
-            <p class="text-left"> <%= review.title %> by <%= review.user.name %> </p>
-          </div>
-          <div class="review-card-bottom">
-          <p class="text-center"> <%= review.content %> </p>
-          </div>
-         </div>
+        <div class="review-card-top d-flex flex-column mb-0">
+         <div class="text-left">
+          <% review.rating.times do  %>
+          <i class="fas fa-star"></i>
+          <% end %>
+        </div>
+        <p class="text-left"> <%= review.title %> by <%= review.user.name %> </p>
+      </div>
+      <div class="review-card-bottom">
+        <p class="text-center"> <%= review.content %> </p>
+      </div>
+    </div>
     <% end %>
-       </div>
+      </div>
     </div>
   </div>
+</div>
